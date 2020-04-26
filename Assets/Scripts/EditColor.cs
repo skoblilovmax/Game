@@ -14,10 +14,8 @@ public class EditColor : MonoBehaviour
 
     void Awake()
     {
-        string path = @"C:\Users\skobl\Osmos\Assets\Config\Color.txt";
-        StreamReader sr = new StreamReader(path);
-        string text = sr.ReadToEnd();
-        sr.Close();
+        TextAsset sourceFile = (TextAsset)Resources.Load("Color", typeof(TextAsset));
+        string text = sourceFile.text;
 
         text = text.Replace("{user: {color: ", "");
         text = text.Replace("}, enemy: {color1: ", "");

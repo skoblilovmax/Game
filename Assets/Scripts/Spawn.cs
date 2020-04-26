@@ -13,10 +13,9 @@ public class Spawn : MonoBehaviour
 
     void Awake()
     {
-        string path = @"C:\Users\skobl\Osmos\Assets\Config\NumberOfEnemies.txt";
-        StreamReader sr = new StreamReader(path);
-        string text = sr.ReadToEnd();
-        sr.Close();
+        TextAsset sourceFile = (TextAsset)Resources.Load("NumberOfEnemies", typeof(TextAsset));
+        string text = sourceFile.text;
+        
         numOfEnemies = Int32.Parse(text);
 
         for (int i = 0; i < numOfEnemies; i++)
