@@ -35,6 +35,7 @@ public class PlayerCollision : MonoBehaviour
                 }
 
                 float areaSum = 0;
+                
                 foreach(var enemy in enemies)
                 {
                     areaSum += Mathf.PI * Mathf.Pow(enemy.gameObject.transform.localScale.x, 2) / 4;

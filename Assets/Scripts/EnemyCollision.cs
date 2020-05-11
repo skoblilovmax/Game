@@ -23,7 +23,6 @@ public class EnemyCollision : MonoBehaviour
                 firstEnemyScaleY = Mathf.Sqrt(Mathf.Pow(firstEnemyScaleY, 2f) + Mathf.Pow(secondEnemyScaleY, 2f));
                 transform.localScale = new Vector2(firstEnemyScaleX, firstEnemyScaleY);
 
-                //поражение
                 if (other.gameObject.tag == "Player")
                 {
                     Time.timeScale = 0;
